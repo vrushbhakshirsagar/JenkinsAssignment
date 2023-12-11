@@ -4,21 +4,21 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git 'https://github.com/vrushbhakshirsagar/JenkinsAssignment.git'
+                    git 'https://github.com/vrushbhakshirsagar/JenkinsAssignment.git'    
                 }
             }
         }      
         stage('Build') {
             steps {
                 script {
-                    bat(script: 'javac HelloWorld.java', returnStatus: true) // Use 'bat' on Windows
+                    bat(script: 'javac Main.java', returnStatus: true) // Use 'bat' on Windows
                 }
             }
         }     
         stage('Test') {
             steps {
                 script {
-                    bat(script: 'java HelloWorld', returnStatus: true) // Use 'bat' on Windows
+                    bat(script: 'java Main', returnStatus: true) // Use 'bat' on Windows
                     
                 }
             }
